@@ -5,7 +5,7 @@ const Giftcard = () => {
   return (
     <section className="mx-auto my-20 max-w-7xl">
       <h2 className="mb-10 text-center font-medium">Szolgáltatásaim</h2>
-      <section className="grid grid-cols-1 gap-2 p-4 md:grid-cols-2">
+      <section className="grid grid-cols-1 gap-6 p-4 md:grid-cols-2">
         <div className="m-auto">
           <Image
             src={img}

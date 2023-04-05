@@ -1,13 +1,13 @@
 import Collapse from "@mui/material/Collapse"
 import IconButton from "@mui/material/IconButton"
 import Link from "next/link"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import MenuIcon from "@mui/icons-material/Menu"
-import CallIcon from "@mui/icons-material/Call"
 import EmailIcon from "@mui/icons-material/Email"
 import PlaceIcon from "@mui/icons-material/Place"
 import Image from "next/image"
 import dorinKozmetika from "../../../public/images/logo.png"
+import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone"
 
 const Navbar = () => {
   const [showMobileNavbar, setShowMobileNavbar] = useState(false)
@@ -20,10 +20,9 @@ const Navbar = () => {
   if (typeof window !== "undefined") {
     window.onscroll = () => {
       let contact = document.getElementById("contact")!
-      let logo = document.getElementById("logo")!
       let header = document.getElementById("header")!
 
-      if (window.screen.width > 992) {
+      if (window.screen.width > 1023) {
         if (
           document.body.scrollTop > 20 ||
           document.documentElement.scrollTop > 20
@@ -54,10 +53,10 @@ const Navbar = () => {
       id="header"
       className="fixed top-0 z-10 w-full text-gray-600 transition-all"
     >
-      <section className="m-auto hidden max-w-7xl flex-col items-center justify-between px-4 md:flex">
+      <section className="m-auto hidden max-w-7xl flex-col items-center justify-between px-4 lg:flex">
         <div id="contact" className="flex flex-row py-2 text-xs">
           <span className="mx-4 flex flex-row items-center">
-            <CallIcon fontSize="small" className="mr-2" />
+            <PhoneIphoneIcon fontSize="small" className="mr-2" />
             +36 20 413 5877
           </span>
           <span className="mx-4 flex flex-row items-center">
@@ -74,7 +73,7 @@ const Navbar = () => {
             id="logo"
             href="/"
             passHref
-            className="hidden flex-1 p-4 md:block"
+            className="hidden flex-1 p-4 lg:block"
           >
             <Image src={dorinKozmetika} width={140} alt="dorin-kozmetika" />
           </Link>
@@ -102,9 +101,9 @@ const Navbar = () => {
       </section>
 
       {/* mobile */}
-      <section className="m-auto flex max-w-7xl flex-row items-center justify-between px-4 md:hidden">
+      <section className="m-auto flex max-w-7xl flex-row items-center justify-between bg-white px-4 lg:hidden">
         <div className="mr-auto flex flex-row items-center">
-          <Link href="" passHref className="block md:hidden">
+          <Link href="" passHref className="block lg:hidden">
             <span className="ml-3">Kezdőoldal</span>
           </Link>
         </div>

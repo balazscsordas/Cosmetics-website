@@ -4,7 +4,7 @@ import brand2 from "../../../public/images/product2-logo.png"
 
 const Brands = () => {
   return (
-    <section className="bg-gradient-to-t from-[#ffd2e5] to-[#f9a3c7]">
+    <section className="my-16 bg-gradient-to-t from-[#ffd2e5] to-[#f9a3c7]">
       <section className="m-auto max-w-5xl px-4 py-12">
         <h2 className="mb-14 text-center font-medium">
           Márkák, amikkel dolgozom

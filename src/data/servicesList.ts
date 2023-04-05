@@ -7,32 +7,36 @@ import gyantazasKezeles from "../../public/images/Gyantazas_kezeles_img.jpg"
 import szempillaKezelesek from "../../public/images/szempilla_img.jpg"
 import pedikurKezelesek from "../../public/images/Pedikur_img.jpg"
 
-interface Service {
+export interface Treatment {
+  treatmentName: string
+  treatmentSubname?: string
+  treatmentDescription?: string
+  treatmentPlusDescription?: string
+  treatmentPrice: string
+  treatmentPlusPrice?: string
+  treatmentTime?: string
+  treatmentPlusTime?: string
+  treatmentSteps?: string[]
+}
+
+export interface Service {
   name: string
   image: StaticImageData
-  treatments: {
-    treatmentName: string
-    treatmentSubname?: string
-    treatmentDescription?: string
-    treatmentPlusDescription?: string
-    treatmentPrice: string
-    treatmentPlusPrice?: string
-    treatmentTime?: string
-    treatmentPlusTime?: string
-    treatmentSteps?: string[]
-  }[]
+  urlPath: string
+  treatments: Treatment[]
 }
 
 const services: Service[] = [
   {
     name: "Gépi kezelések",
     image: gepiKezelesek,
+    urlPath: "bb-glow",
     treatments: [
       {
         treatmentName: "BB Glow mezoterápiás kezelés",
         treatmentDescription:
           "BB Glow egy viszonylag új kozmetikai eljárás, amely során tápláló szérumokat, speciális organikus pigmenteket juttatunk a bőr felső rétegébe Mezopen készülék segítségével. A kezelés során szemmel láthatatlan, mikro tűszúrásokat ejtünk a bőr felszínén, ami segíti ezen hatóanyagok megfelelő felszívódását és stimulálja a kollagéntermelést. Az eljárás célja a bőr színének és textúrájának javítása, valamint az apróbb bőrhibák, foltok eltüntetése, halványítása.",
-        treatmentPrice: "77000 Ft - (3 alkalomat tartalmaz)",
+        treatmentPrice: "77000 Ft - (3 alkalmat tartalmaz)",
         treatmentTime: "3 alkalmas kezelés",
         treatmentSteps: [
           "Az arc gyengéd megtisztítása a szennyeződésektől",
@@ -51,6 +55,7 @@ const services: Service[] = [
   {
     name: "Klasszikus arckezelések",
     image: klasszikusKezelesek,
+    urlPath: "klasszikusKezelesek",
     treatments: [
       {
         treatmentName: "Klasszikus nagykezelés",
@@ -153,13 +158,14 @@ const services: Service[] = [
   {
     name: "Bruno Vassari speciális arckezelések",
     image: brunoVasariKezelesek,
+    urlPath: "specialisArckezelesek",
     treatments: [
       {
         treatmentName: "LAB Division Collagen Booster - Face Lifting terápia",
         treatmentSubname:
           "Fiatalodj műtéti beavatkozás nélkül, fájdalommentesen!",
         treatmentPlusDescription:
-          "Kezelések gyakorisága: heti 1 alkalom 5 héten keresztül, kizárólag bérlet formájában vásárolható meg, melynek teljes ára: 117500 Ft (5 alkalomat tartalmaz)",
+          "Kezelések gyakorisága: heti 1 alkalom 5 héten keresztül, kizárólag bérlet formájában vásárolható meg, melynek teljes ára: 117500 Ft (5 alkalmat tartalmaz)",
         treatmentDescription:
           "A kúrakezelés az értékes peptid- komplex, a kollagén és C-vitamin antioxidáns hatása révén fejti ki feszesítő hatását, mélyen táplálja és regenerálja a bőrt, megvédi azt az öregedés első jeleitől. Fő tevékenysége a kollagén termelés fokozása a bőrben. A kollagén és elasztin rostok feszesebbé válnak, az eredmény kicsattanóan sima és feszes bőr, melynek hatása egyéni adottságoktól függően akár 2 évig is eltarthat.",
         treatmentPrice: "23500 Ft / alkalom",
@@ -338,6 +344,7 @@ const services: Service[] = [
   {
     name: "Relaxáló kezelések",
     image: relaxKezelesek,
+    urlPath: "relaxaloKezelesek",
     treatments: [
       {
         treatmentName: "Relax kezelés",
@@ -372,6 +379,7 @@ const services: Service[] = [
   {
     name: "Gyantázás",
     image: gyantazasKezeles,
+    urlPath: "gyantazas",
     treatments: [
       {
         treatmentName: "XS - bajusz, áll",
@@ -401,6 +409,7 @@ const services: Service[] = [
   {
     name: "Szempilla és szemöldök",
     image: szempillaKezelesek,
+    urlPath: "szemoldokSzempilla",
     treatments: [
       {
         treatmentName: "Szempilla lifting",
@@ -450,6 +459,7 @@ const services: Service[] = [
   {
     name: "Pedikűr",
     image: pedikurKezelesek,
+    urlPath: "pedikur",
     treatments: [
       {
         treatmentName: "Callux gyümölcssavas pedikűr",

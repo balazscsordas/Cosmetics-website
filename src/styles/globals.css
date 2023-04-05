@@ -5,6 +5,7 @@
 html {
   color: rgb(69, 69, 69);
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -126,7 +127,7 @@ p {
   background-size: cover;
 }
 
-.relax-bg {
+.relaxalo-kezelesek-bg {
   background: linear-gradient(to top, transparent 30%, white),
     url(../../public/images/Kezelesek_relax_2000.jpg) no-repeat center;
   -webkit-background-size: cover;
@@ -156,6 +157,15 @@ p {
 .pricelist-bg {
   background: linear-gradient(to top, transparent 30%, white),
     url(../../public/images/arlista-banner.jpg) no-repeat center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.elerhetosegek-bg {
+  background: linear-gradient(to top, transparent 30%, white),
+    url(../../public/images/elerhetosegek-banner.jpg) no-repeat center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
